@@ -1,7 +1,19 @@
 [gd_scene format=3 uid="uid://b0frlo2iug7e5"]
 
 [ext_resource type="Script" uid="uid://b1gl6bukhm0vm" path="res://scripts/HandTool.cs" id="1_dxfvs"]
+[ext_resource type="PackedScene" uid="uid://bfd6dwbxrnfec" path="res://assets/hand.glb" id="2_dxfvs"]
 
-[node name="HandTool" type="Node3D" unique_id=1960500986 node_paths=PackedStringArray("_audioStreamPlayer3D")]
+[node name="HandTool" type="Node3D" unique_id=1960500986]
 script = ExtResource("1_dxfvs")
-_audioStreamPlayer3D = NodePath("")
+
+[node name="glove" parent="." unique_id=1713539416 instance=ExtResource("2_dxfvs")]
+transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)
+
+[node name="Skeleton3D" parent="glove/armature" parent_id_path=PackedInt32Array(1713539416, 2131935883) index="0" unique_id=1044984335]
+bones/0/rotation = Quaternion(0.69351953, -0.34011042, -0.13795008, 0.61993974)
+bones/2/rotation = Quaternion(-0.032932054, -0.007622601, -0.116285205, 0.9926405)
+bones/3/rotation = Quaternion(-0.022552479, -0.056712884, -0.43119115, 0.90019405)
+bones/4/rotation = Quaternion(-0.12075077, 0.18991825, -0.7078738, 0.669526)
+bones/5/rotation = Quaternion(0.20191501, -0.05348273, 0.6025235, 0.77028275)
+
+[editable path="glove"]

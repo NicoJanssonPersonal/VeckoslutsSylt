@@ -4,6 +4,9 @@ using System;
 public partial class UiManager : Control
 {
 	[Export] private CanvasLayer _settingsMenu;
+	[Export] private Label _money;
+	[Export] private Label _weeds;
+
 	public override void _Ready()
 	{
 		_settingsMenu.Visible = false;
@@ -21,5 +24,13 @@ public partial class UiManager : Control
 
 			Input.MouseMode = isOpen ? Input.MouseModeEnum.Visible : Input.MouseModeEnum.Captured;
 		}
+	}
+	private void displayMoney()
+	{
+		//_money.Text = 
+	}
+	private void displayWeedsCollected()
+	{
+		//_weeds.Text =
 	}
 }
