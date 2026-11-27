@@ -21,7 +21,7 @@ public partial class WeedSpawner : Node
 
 	private void SpawnObject()
 	{
-		GD.Print("Spawned object");
+		//GD.Print("Spawned object");
 		if (ObjectScene == null)
 		{
 			GD.PushWarning("Assign ObjectScene in the Inspector.");
@@ -35,7 +35,7 @@ public partial class WeedSpawner : Node
 
 		AddChild(instance);
 		instance.Position = new Vector3(x, 0, z);
-        instance.Rotation
+        //instance.Rotation
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

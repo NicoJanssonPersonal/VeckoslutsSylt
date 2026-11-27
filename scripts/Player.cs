@@ -2,7 +2,9 @@ using Godot;
 using System;
 
 public partial class Player : CharacterBody3D
-{	
+{
+
+	[Export] private HandTool handTool;
 	private float sens = 0.001f;
 	private Camera3D _cam;
 	private Node3D _head;
@@ -20,7 +22,7 @@ public partial class Player : CharacterBody3D
 	private float _standHeadY;
 	private float _crouchHeadY;
 	private bool _isCrouching = false;
-
+	private bool _toolHand = true;
 	public override void _Ready()
 	{
 		_head = GetNode<Node3D>("HEAD");
@@ -53,6 +55,10 @@ public partial class Player : CharacterBody3D
 		{
 			velocity.Y = JumpVelocity;
 		}
+		if (Input.IsActionJustPressed("action") && _toolHand)
+		{
+			handTool.pickUpWeed();
+		}
 
 		if (Input.IsActionJustPressed("crouch"))
 		{
@@ -66,12 +72,11 @@ public partial class Player : CharacterBody3D
 			}
 		}
 
-		// Smoothly adjust capsule height, capsule Y position (to keep feet on floor), and HEAD height
 		float targetHeight = _isCrouching ? CrouchHeight : StandHeight;
 		float targetHeadY = _isCrouching ? _crouchHeadY : _standHeadY;
 
 		_capsule.Height = Mathf.Lerp(_capsule.Height, targetHeight, CrouchLerpSpeed * dt);
-		
+
 		Vector3 colPos = _colShape.Position;
 		colPos.Y = _capsule.Height / 2.0f;
 		_colShape.Position = colPos;
@@ -80,20 +85,22 @@ public partial class Player : CharacterBody3D
 		headPos.Y = Mathf.Lerp(headPos.Y, targetHeadY, CrouchLerpSpeed * dt);
 		_head.Position = headPos;
 
-		// Movement
 		float currentSpeed = _isCrouching ? CrouchSpeed : Speed;
 		Vector2 inputDir = Input.GetVector("left", "right", "forward", "back");
 		Vector3 direction = (_head.Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
-		
-		if (direction != Vector3.Zero && IsOnFloor())
+
+		if (IsOnFloor())
 		{
-			velocity.X = direction.X * currentSpeed;
-			velocity.Z = direction.Z * currentSpeed;
-		}
-		else
-		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, currentSpeed);
-			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, currentSpeed);
+			if (direction != Vector3.Zero)
+			{
+				velocity.X = direction.X * currentSpeed;
+				velocity.Z = direction.Z * currentSpeed;
+			}
+			else
+			{
+				velocity.X = Mathf.MoveToward(Velocity.X, 0, currentSpeed);
+				velocity.Z = Mathf.MoveToward(Velocity.Z, 0, currentSpeed);
+			}
 		}
 
 		Velocity = velocity;

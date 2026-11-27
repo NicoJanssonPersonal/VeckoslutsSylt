@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b0frlo2iug7e5"]
+
+[ext_resource type="Script" uid="uid://b1gl6bukhm0vm" path="res://scripts/HandTool.cs" id="1_dxfvs"]
+
+[node name="HandTool" type="Node3D" unique_id=1960500986 node_paths=PackedStringArray("_audioStreamPlayer3D")]
+script = ExtResource("1_dxfvs")
+_audioStreamPlayer3D = NodePath("")
