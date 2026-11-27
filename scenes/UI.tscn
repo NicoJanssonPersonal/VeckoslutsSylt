@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://b5f6mc6fjgmw4"]
+
+[ext_resource type="Script" uid="uid://dd7muoutrsxhd" path="res://scripts/Settings.cs" id="1_dj8aq"]
+[ext_resource type="Script" uid="uid://ba0b8l1di7ff0" path="res://scripts/UiManager.cs" id="1_ro3t7"]
+
+[node name="Control" type="Control" unique_id=714371345 node_paths=PackedStringArray("_settingsMenu")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_ro3t7")
+_settingsMenu = NodePath("settings")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=330251649]
+visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1260260102]
+offset_right = 288.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 32
+text = "MONEY | 676767€"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1971365370]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="settings" type="CanvasLayer" parent="." unique_id=2040571263 node_paths=PackedStringArray("_applyButton", "_Sensitivty")]
+process_mode = 3
+visible = false
+script = ExtResource("1_dj8aq")
+_applyButton = NodePath("APPLY")
+_Sensitivty = NodePath("SENSITIVITY(HBOX)/LineEdit")
+
+[node name="SENSITIVITY(HBOX)" type="HBoxContainer" parent="settings" unique_id=1148711841]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -20.0
+offset_right = 82.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="settings/SENSITIVITY(HBOX)" unique_id=1676107710]
+layout_mode = 2
+text = "SENSITIVITY"
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="settings/SENSITIVITY(HBOX)" unique_id=1763043333]
+layout_mode = 2
+
+[node name="APPLY" type="Button" parent="settings" unique_id=747354856]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.5
+offset_top = -31.0
+offset_right = 28.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "APPLY"

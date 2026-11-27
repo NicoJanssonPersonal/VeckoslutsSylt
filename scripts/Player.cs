@@ -5,7 +5,6 @@ public partial class Player : CharacterBody3D
 {
 
 	[Export] private HandTool handTool;
-	private float sens = 0.001f;
 	private Camera3D _cam;
 	private Node3D _head;
 	private CollisionShape3D _colShape;
@@ -25,6 +24,7 @@ public partial class Player : CharacterBody3D
 	private bool _toolHand = true;
 	public override void _Ready()
 	{
+		Settings.LoadData();
 		_head = GetNode<Node3D>("HEAD");
 		_cam = GetNode<Camera3D>("HEAD/Camera3D");
 		_colShape = GetNode<CollisionShape3D>("CollisionShape3D");
@@ -109,10 +109,13 @@ public partial class Player : CharacterBody3D
 
 	public override void _UnhandledInput(InputEvent @event)
 	{
-		if (!IsMultiplayerAuthority()) return;
+		if (GetTree().Paused || Input.MouseMode != Input.MouseModeEnum.Captured)
+			return;
 
 		if (@event is InputEventMouseMotion mouseMotion)
 		{
+			float sens = Settings.MouseSensitivity;
+
 			_head.RotateY(-mouseMotion.Relative.X * sens);
 			_cam.RotateX(-mouseMotion.Relative.Y * sens);
 

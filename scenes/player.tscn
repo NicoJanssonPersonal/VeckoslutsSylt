@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bww32p1nbu80u" path="res://scripts/Player.cs" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://b0frlo2iug7e5" path="res://scenes/handTool.tscn" id="2_g2els"]
 [ext_resource type="AudioStream" uid="uid://bv8rt1ktiytlr" path="res://sounds/plantPickup.mp3" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://b5f6mc6fjgmw4" path="res://scenes/UI.tscn" id="4_dqkch"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_abqvh"]
 
@@ -36,24 +37,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = SubResource("StandardMaterial3D_4flbx")
 mesh = SubResource("CapsuleMesh_cbyeo")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1169438032]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=406094986]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = -16.0
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="Audio" type="Node3D" parent="." unique_id=1557486511]
 
 [node name="PickupPlayer" type="AudioStreamPlayer3D" parent="Audio" unique_id=1960687838]
 stream = ExtResource("3_qhqgy")
 volume_db = -40.0
 max_polyphony = 5
+
+[node name="Control" parent="." unique_id=714371345 instance=ExtResource("4_dqkch")]
