@@ -25,7 +25,6 @@ public partial class HandTool : Node3D
 	}
 	public void pickUpWeed()
 	{
-		// 1. Block the action if we are already in the middle of picking one up
 		if (_isPickingUp)
 			return;
 
@@ -35,15 +34,15 @@ public partial class HandTool : Node3D
 			Vector3 hitPoint = _raycast.GetCollisionPoint();
 			Vector3 hitNormal = _raycast.GetCollisionNormal();
 
-			/*if (collider is Weed weed)
+			if(collider is Weed weed)
 			{
 				weed.TakeDamage(10);
-			}*/
+			}
 
 			// 2. Lock picking up before starting the animation
 			_isPickingUp = true;
 
-			GD.Print($"Looking at: {collider} at {hitPoint}");
+			//GD.Print($"Looking at: {collider} at {hitPoint}");
 			_audioStreamPlayer3D.Play();
 
 			_animPlayer.SpeedScale = 1f; // 1 = 1.75 seconds
