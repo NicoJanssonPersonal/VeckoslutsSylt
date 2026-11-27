@@ -2,6 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://ct22j18ky6q2" path="res://assets/grass.glb" id="1_e1kak"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfnet"]
+cull_mode = 2
+albedo_color = Color(0.19607843, 1, 0.15686275, 1)
+
 [node name="Grass" type="Node3D" unique_id=1607073144]
 
 [node name="grass_mesh" parent="." unique_id=384946470 instance=ExtResource("1_e1kak")]
+
+[node name="grass" parent="grass_mesh" index="0" unique_id=1411904635]
+surface_material_override/0 = SubResource("StandardMaterial3D_qfnet")
+
+[editable path="grass_mesh"]
