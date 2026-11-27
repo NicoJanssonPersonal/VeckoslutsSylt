@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c55ncosuv3lqx"]
+
+[ext_resource type="Script" uid="uid://fbedgxokiy76" path="res://scripts/WeedSpawner.cs" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://d1gf102xv42mv" path="res://scenes/grass.tscn" id="2_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://bdytt612q3eru" path="res://scenes/player.tscn" id="2_rwgxs"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4wyf3"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_k0juu"]
+sky_material = SubResource("ProceduralSkyMaterial_4wyf3")
+
+[sub_resource type="Environment" id="Environment_71j4m"]
+background_mode = 2
+sky = SubResource("Sky_k0juu")
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xxbxq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rwgxs"]
+size = Vector3(2, 0.001, 2)
+
+[node name="Node3D" type="Node3D" unique_id=866644805]
+script = ExtResource("1_nnsk1")
+ObjectScene = ExtResource("2_4wyf3")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=982593494]
+environment = SubResource("Environment_71j4m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1542631706]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=157918138]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1999824512]
+transform = Transform3D(10.664986, 0, 0, 0, 1, 0, 0, 0, 9.423714, 0, 0, 0)
+mesh = SubResource("PlaneMesh_xxbxq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=951175739]
+transform = Transform3D(10.664986, 0, 0, 0, 1, 0, 0, 0, 9.423714, 0, 0, 0)
+shape = SubResource("BoxShape3D_rwgxs")
+
+[node name="CharacterBody3D" parent="." unique_id=1521399822 instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5576422, 0)
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=758945667]
