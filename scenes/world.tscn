@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://jfgjukp6b33c" path="res://scenes/bush.tscn" id="3_k0juu"]
 [ext_resource type="PackedScene" uid="uid://brdttsx7kypp3" path="res://assets/fence.glb" id="4_k0juu"]
 [ext_resource type="Script" uid="uid://bkfs6rtggmpp2" path="res://scripts/Gamemanager.cs" id="5_71j4m"]
+[ext_resource type="PackedScene" uid="uid://b5f6mc6fjgmw4" path="res://scenes/UI.tscn" id="5_i7141"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4wyf3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -50,7 +51,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ro3t7")
 transform = Transform3D(14.448255, 0, 0, 0, 1, 0, 0, 0, 15.208283, 0, 0, -1.7965107)
 shape = SubResource("BoxShape3D_rwgxs")
 
-[node name="CharacterBody3D" parent="StaticBody3D" unique_id=1521399822 instance=ExtResource("2_rwgxs")]
+[node name="CharacterBody3D" parent="." unique_id=1521399822 instance=ExtResource("2_rwgxs")]
+
+[node name="Control" parent="CharacterBody3D" unique_id=714371345 instance=ExtResource("5_i7141")]
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=758945667]
 
@@ -80,5 +83,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12, 
 [node name="blockbench_export9" parent="FENCEStaticBody3D" unique_id=890817155 instance=ExtResource("4_k0juu")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12, 0, -8.5)
 
-[node name="GAMEMANAGER" type="Node3D" parent="." unique_id=1871277039]
+[node name="GAMEMANAGER" type="Node" parent="." unique_id=418383822 node_paths=PackedStringArray("uiManager")]
 script = ExtResource("5_71j4m")
+uiManager = NodePath("../CharacterBody3D/Control")

@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://d1gf102xv42mv"]
 
 [ext_resource type="PackedScene" uid="uid://ct22j18ky6q2" path="res://assets/grass.glb" id="1_e1kak"]
+[ext_resource type="Script" uid="uid://kdwah8f3m0m0" path="res://scripts/Weed.cs" id="2_yarb5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_abqvh"]
 
 [node name="Grass" type="StaticBody3D" unique_id=714726680]
+script = ExtResource("2_yarb5")
 
 [node name="grass_mesh" parent="." unique_id=384946470 instance=ExtResource("1_e1kak")]
-
-[node name="grass" parent="grass_mesh" index="0" unique_id=561663078]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=128966459]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.14497349, 0)

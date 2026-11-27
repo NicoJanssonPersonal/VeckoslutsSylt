@@ -1,17 +1,16 @@
 using Godot;
 using System;
 
-public partial class GameManager : Node
+public partial class Gamemanager : Node
 {
 	public const string SavePath = "user://settings.cfg";
-	private UiManager uiManager;
+	[Export] private UiManager uiManager;
 	private float _currentMoney;
 	private int _weeds;
 	private bool _isDirty = false;
 
 	public override void _Ready()
 	{
-		uiManager.GetNode<UiManager>("StaticBody3D/CharacterBody3D/Control");
 		LoadGameData();
 	}
 

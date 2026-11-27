@@ -3,13 +3,13 @@ using System;
 
 public partial class Weed : StaticBody3D
 {
-	private GameManager gameManager;
+	private Gamemanager gameManager;
 	private int maxLife = 15;
 	private int _currentLife;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		gameManager = GetNode<GameManager>("/root/GAMEMANAGER");
+		//gameManager = GetNode<Gamemanager>("/GAMEMANAGER");
 		_currentLife = maxLife;
 	}
 
@@ -23,7 +23,7 @@ public partial class Weed : StaticBody3D
 		_currentLife -= damage;
 		if (_currentLife <= 0)
 		{
-			gameManager.UpdateWeedsPicked();
+			//gameManager.UpdateWeedsPicked();
 			QueueFree();
 		}
 	}

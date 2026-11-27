@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bww32p1nbu80u" path="res://scripts/Player.cs" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://b0frlo2iug7e5" path="res://scenes/handTool.tscn" id="2_g2els"]
 [ext_resource type="AudioStream" uid="uid://bv8rt1ktiytlr" path="res://sounds/plantPickup.mp3" id="3_qhqgy"]
-[ext_resource type="PackedScene" uid="uid://b5f6mc6fjgmw4" path="res://scenes/UI.tscn" id="4_dqkch"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_abqvh"]
 
@@ -44,5 +43,3 @@ mesh = SubResource("CapsuleMesh_cbyeo")
 stream = ExtResource("3_qhqgy")
 volume_db = -40.0
 max_polyphony = 5
-
-[node name="Control" parent="." unique_id=714371345 instance=ExtResource("4_dqkch")]
