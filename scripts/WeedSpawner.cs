@@ -8,6 +8,7 @@ public partial class WeedSpawner : Node
 
 	[Export] public Vector2 SpawnAreaMin { get; set; } = new(-10, -10);
 	[Export] public Vector2 SpawnAreaMax { get; set; } = new(10, 10);
+
 		
 	private Timer _spawnTimer;
 	private readonly RandomNumberGenerator _rng = new();
@@ -22,7 +23,7 @@ public partial class WeedSpawner : Node
 
 	private void SpawnObject()
 	{
-		var instance = _rng.Randf() < 0.2 ? Bush.Instantiate<Node3D>() : Grass.Instantiate<Node3D>();
+		var instance = _rng.Randf() < 0.05 ? Bush.Instantiate<Node3D>() : Grass.Instantiate<Node3D>();
 
 		float x = _rng.RandfRange(SpawnAreaMin.X, SpawnAreaMax.X);
 		float z = _rng.RandfRange(SpawnAreaMin.Y, SpawnAreaMax.Y);

@@ -6,6 +6,8 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_abqvh"]
 
 [node name="Grass" type="StaticBody3D" unique_id=714726680]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("2_yarb5")
 
 [node name="grass_mesh" parent="." unique_id=384946470 instance=ExtResource("1_e1kak")]

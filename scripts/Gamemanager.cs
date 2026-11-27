@@ -12,12 +12,18 @@ public partial class Gamemanager : Node
 	public override void _Ready()
 	{
 		LoadGameData();
-	}
+		// Subscribe to the global EventBus
+		EventBus.Instance.MoneyEarned += UpdateMoney;
+		EventBus.Instance.WeedPicked += UpdateWeedsPicked;
 
+		// Update UI with loaded save data immediately on start
+		uiManager.displayMoney(_currentMoney.ToString("F2"));
+		uiManager.displayWeedsCollected(_weeds.ToString());
+	}
 	public void UpdateMoney(float moneyToAdd)
 	{
 		_currentMoney += moneyToAdd;
-		uiManager.displayMoney(moneyToAdd.ToString());
+		uiManager.displayMoney(_currentMoney.ToString("F2"));
 		_isDirty = true;
 	}
 
@@ -46,7 +52,6 @@ public partial class Gamemanager : Node
 		{
 			config.Load(SavePath);
 		}
-		config.Load(SavePath);
 
 		config.SetValue("GameData", "money", _currentMoney);
 		config.SetValue("GameData", "weeds", _weeds);
@@ -80,5 +85,13 @@ public partial class Gamemanager : Node
 
 		_currentMoney = config.GetValue("GameData", "money", 0f).AsSingle();
 		_weeds = config.GetValue("GameData", "weeds", 0).AsInt32();
+	}
+	public override void _ExitTree()
+	{
+		if (EventBus.Instance != null)
+		{
+			EventBus.Instance.MoneyEarned -= UpdateMoney;
+			EventBus.Instance.WeedPicked -= UpdateWeedsPicked;
+		}
 	}
 }

@@ -27,10 +27,10 @@ public partial class UiManager : Control
 	}
 	public void displayMoney(string money)
 	{
-		_money.Text = money;
+		_money.Text = "MONEY | " + money;
 	}
 	public void displayWeedsCollected(string weeds)
 	{
-		_weeds.Text = weeds;
+		_weeds.Text = "WEEDS | " +weeds;
 	}
 }

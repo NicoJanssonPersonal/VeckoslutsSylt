@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dd7muoutrsxhd" path="res://scripts/Settings.cs" id="1_dj8aq"]
 [ext_resource type="Script" uid="uid://ba0b8l1di7ff0" path="res://scripts/UiManager.cs" id="1_ro3t7"]
 
-[node name="Control" type="Control" unique_id=714371345 node_paths=PackedStringArray("_settingsMenu")]
+[node name="Control" type="Control" unique_id=714371345 node_paths=PackedStringArray("_settingsMenu", "_money", "_weeds")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -14,6 +14,8 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_ro3t7")
 _settingsMenu = NodePath("settings")
+_money = NodePath("CanvasLayer/VBoxContainer/Money")
+_weeds = NodePath("CanvasLayer/VBoxContainer/weeds")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=330251649]
 
