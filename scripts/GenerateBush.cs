@@ -60,4 +60,18 @@ public partial class GenerateBush : MultiMeshInstance3D
 
         Multimesh = mm;
     }
+
+    public override void _Notification(int what)
+    {
+        if (what == NotificationEditorPreSave)
+        {
+            // Prevent Godot from serializing MultiMesh data into the .tscn file
+            Multimesh = null;
+        }
+        else if (what == NotificationEditorPostSave)
+        {
+            // Restore the visual preview in the editor viewport after saving
+            BuildBush();
+        }
+    }
 }
