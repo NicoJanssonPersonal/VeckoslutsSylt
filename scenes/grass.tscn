@@ -1,16 +1,25 @@
 [gd_scene format=3 uid="uid://d1gf102xv42mv"]
 
 [ext_resource type="PackedScene" uid="uid://ct22j18ky6q2" path="res://assets/grass.glb" id="1_e1kak"]
+[ext_resource type="ArrayMesh" uid="uid://coewsebsix8m" path="res://assets/grass_blade.tres" id="2_yarb5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfnet"]
 cull_mode = 2
 albedo_color = Color(0.19607843, 1, 0.15686275, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e1kak"]
+size = Vector3(0.0625, 0.0625, 0.3125)
 
 [node name="Grass" type="Node3D" unique_id=1607073144]
 
 [node name="grass_mesh" parent="." unique_id=384946470 instance=ExtResource("1_e1kak")]
 
 [node name="grass" parent="grass_mesh" index="0" unique_id=1411904635]
+mesh = ExtResource("2_yarb5")
 surface_material_override/0 = SubResource("StandardMaterial3D_qfnet")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grass_mesh" unique_id=1865042117]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0.15625, 0)
+shape = SubResource("BoxShape3D_e1kak")
 
 [editable path="grass_mesh"]

@@ -3,7 +3,8 @@ using System;
 
 public partial class WeedSpawner : Node
 {
-	[Export] public PackedScene ObjectScene { get; set; }
+	[Export] public PackedScene Grass { get; set; }
+	[Export] public PackedScene Bush { get; set; }
 
 	[Export] public Vector2 SpawnAreaMin { get; set; } = new(-10, -10);
 	[Export] public Vector2 SpawnAreaMax { get; set; } = new(10, 10);
@@ -21,13 +22,7 @@ public partial class WeedSpawner : Node
 
 	private void SpawnObject()
 	{
-		if (ObjectScene == null)
-		{
-			GD.PushWarning("Assign ObjectScene in the Inspector.");
-			return;
-		}
-
-		var instance = ObjectScene.Instantiate<Node3D>();
+		var instance = _rng.Randf() < 0.2 ? Bush.Instantiate<Node3D>() : Grass.Instantiate<Node3D>();
 
 		float x = _rng.RandfRange(SpawnAreaMin.X, SpawnAreaMax.X);
 		float z = _rng.RandfRange(SpawnAreaMin.Y, SpawnAreaMax.Y);
