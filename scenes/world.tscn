@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://fbedgxokiy76" path="res://scripts/WeedSpawner.cs" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://d1gf102xv42mv" path="res://scenes/grass.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://mouc27xs81or" path="res://scenes/player.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://brdttsx7kypp3" path="res://assets/fence.glb" id="4_k0juu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4wyf3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -17,6 +18,9 @@ sky = SubResource("Sky_k0juu")
 glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xxbxq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ro3t7"]
+albedo_color = Color(0.29411766, 0.44313726, 0.25490198, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rwgxs"]
 size = Vector3(2, 0.001, 2)
@@ -35,13 +39,40 @@ shadow_enabled = true
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=157918138]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1999824512]
-transform = Transform3D(10.664986, 0, 0, 0, 1, 0, 0, 0, 9.423714, 0, 0, 0)
+transform = Transform3D(14.448255, 0, 0, 0, 1, 0, 0, 0, 15.208283, 0, 0, -1.7965107)
 mesh = SubResource("PlaneMesh_xxbxq")
+surface_material_override/0 = SubResource("StandardMaterial3D_ro3t7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=951175739]
-transform = Transform3D(10.664986, 0, 0, 0, 1, 0, 0, 0, 9.423714, 0, 0, 0)
+transform = Transform3D(14.448255, 0, 0, 0, 1, 0, 0, 0, 15.208283, 0, 0, -1.7965107)
 shape = SubResource("BoxShape3D_rwgxs")
 
 [node name="CharacterBody3D" parent="StaticBody3D" unique_id=1521399822 instance=ExtResource("2_rwgxs")]
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=758945667]
+
+[node name="FENCEStaticBody3D" type="StaticBody3D" parent="." unique_id=591509755]
+
+[node name="blockbench_export" parent="FENCEStaticBody3D" unique_id=1108929208 instance=ExtResource("4_k0juu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9.318)
+
+[node name="blockbench_export2" parent="FENCEStaticBody3D" unique_id=1185393744 instance=ExtResource("4_k0juu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 9.318)
+
+[node name="blockbench_export4" parent="FENCEStaticBody3D" unique_id=26107132 instance=ExtResource("4_k0juu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.52, 0, 3.5)
+
+[node name="blockbench_export5" parent="FENCEStaticBody3D" unique_id=1517568508 instance=ExtResource("4_k0juu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.52, 0, -8.5)
+
+[node name="blockbench_export6" parent="FENCEStaticBody3D" unique_id=1672956987 instance=ExtResource("4_k0juu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.52, 0, 3.5)
+
+[node name="blockbench_export7" parent="FENCEStaticBody3D" unique_id=1654316829 instance=ExtResource("4_k0juu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.52, 0, -8.5)
+
+[node name="blockbench_export8" parent="FENCEStaticBody3D" unique_id=759237227 instance=ExtResource("4_k0juu")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12, 0, 3.5)
+
+[node name="blockbench_export9" parent="FENCEStaticBody3D" unique_id=890817155 instance=ExtResource("4_k0juu")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12, 0, -8.5)

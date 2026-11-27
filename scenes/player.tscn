@@ -25,6 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58134985, -0.036718965)
 target_position = Vector3(0, 0, -10)
 
 [node name="HandTool" parent="HEAD/Camera3D/RayCast3D" unique_id=1960500986 node_paths=PackedStringArray("_audioStreamPlayer3D", "_raycast") instance=ExtResource("2_g2els")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49649596, -0.3778087, -0.80246073)
 _audioStreamPlayer3D = NodePath("../../../../Audio/PickupPlayer")
 _raycast = NodePath("..")
 

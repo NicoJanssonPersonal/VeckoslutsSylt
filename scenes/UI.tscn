@@ -16,7 +16,6 @@ script = ExtResource("1_ro3t7")
 _settingsMenu = NodePath("settings")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=330251649]
-visible = false
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1260260102]
 offset_right = 288.0
