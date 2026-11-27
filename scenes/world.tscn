@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://fbedgxokiy76" path="res://scripts/WeedSpawner.cs" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://d1gf102xv42mv" path="res://scenes/grass.tscn" id="2_4wyf3"]
-[ext_resource type="PackedScene" uid="uid://jfgjukp6b33c" path="res://scenes/bush.tscn" id="3_k0juu"]
 [ext_resource type="PackedScene" uid="uid://mouc27xs81or" path="res://scenes/player.tscn" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://brdttsx7kypp3" path="res://assets/fence.glb" id="4_k0juu"]
+[ext_resource type="Script" uid="uid://bkfs6rtggmpp2" path="res://scripts/Gamemanager.cs" id="5_71j4m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4wyf3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -28,8 +28,7 @@ size = Vector3(2, 0.001, 2)
 
 [node name="Node3D" type="Node3D" unique_id=866644805]
 script = ExtResource("1_nnsk1")
-grass = ExtResource("2_4wyf3")
-bush = ExtResource("3_k0juu")
+Grass = ExtResource("2_4wyf3")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=982593494]
 environment = SubResource("Environment_71j4m")
@@ -78,3 +77,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12, 
 
 [node name="blockbench_export9" parent="FENCEStaticBody3D" unique_id=890817155 instance=ExtResource("4_k0juu")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12, 0, -8.5)
+
+[node name="GAMEMANAGER" type="Node3D" parent="." unique_id=1871277039]
+script = ExtResource("5_71j4m")

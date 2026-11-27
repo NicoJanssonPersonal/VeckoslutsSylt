@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://jfgjukp6b33c"]
 
 [ext_resource type="ArrayMesh" uid="uid://coewsebsix8m" path="res://assets/grass_blade.tres" id="1_ehqem"]
-[ext_resource type="Script" uid="uid://c2vkobc00vi7b" path="res://scripts/GenerateBush.cs" id="1_lad4k"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xxbxq"]
 
@@ -18,7 +17,3 @@ shape = SubResource("SphereShape3D_xxbxq")
 
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="." unique_id=1731732791]
 multimesh = SubResource("MultiMesh_ehqem")
-script = ExtResource("1_lad4k")
-BladeMesh = ExtResource("1_ehqem")
-BladeCount = 150
-BushRadius = 0.33

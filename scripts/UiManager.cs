@@ -25,12 +25,12 @@ public partial class UiManager : Control
 			Input.MouseMode = isOpen ? Input.MouseModeEnum.Visible : Input.MouseModeEnum.Captured;
 		}
 	}
-	private void displayMoney()
+	public void displayMoney(string money)
 	{
-		//_money.Text = 
+		_money.Text = money;
 	}
-	private void displayWeedsCollected()
+	public void displayWeedsCollected(string weeds)
 	{
-		//_weeds.Text =
+		_weeds.Text = weeds;
 	}
 }
