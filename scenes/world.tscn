@@ -1,13 +1,32 @@
 [gd_scene format=3 uid="uid://c55ncosuv3lqx"]
 
-[ext_resource type="Script" uid="uid://fbedgxokiy76" path="res://scripts/WeedSpawner.cs" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://fbedgxokiy76" path="res://scripts/weeds/WeedSpawner.cs" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://d1gf102xv42mv" path="res://scenes/grass.tscn" id="2_4wyf3"]
+[ext_resource type="Script" uid="uid://drpe2j2lvodwo" path="res://scripts/weeds/SpawnEntry.cs" id="2_7r4gi"]
+[ext_resource type="Script" uid="uid://bmharn13hot3y" path="res://scripts/weeds/SpawnTable.cs" id="2_i7141"]
 [ext_resource type="PackedScene" uid="uid://mouc27xs81or" path="res://scenes/player.tscn" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://jfgjukp6b33c" path="res://scenes/bush.tscn" id="3_k0juu"]
 [ext_resource type="PackedScene" uid="uid://brdttsx7kypp3" path="res://assets/fence.glb" id="4_k0juu"]
 [ext_resource type="Script" uid="uid://bkfs6rtggmpp2" path="res://scripts/Gamemanager.cs" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://b5f6mc6fjgmw4" path="res://scenes/UI.tscn" id="5_i7141"]
 [ext_resource type="PackedScene" uid="uid://nboxj3pndqqt" path="res://assets/house.glb" id="7_4mrxx"]
+
+[sub_resource type="Resource" id="Resource_7r4gi"]
+script = ExtResource("2_7r4gi")
+Scene = ExtResource("3_k0juu")
+Chance = 0.2
+metadata/_custom_type_script = "uid://drpe2j2lvodwo"
+
+[sub_resource type="Resource" id="Resource_w7kh3"]
+script = ExtResource("2_7r4gi")
+Scene = ExtResource("2_4wyf3")
+Chance = 0.8
+metadata/_custom_type_script = "uid://drpe2j2lvodwo"
+
+[sub_resource type="Resource" id="Resource_4mrxx"]
+script = ExtResource("2_i7141")
+Entries = Array[ExtResource("2_7r4gi")]([SubResource("Resource_7r4gi"), SubResource("Resource_w7kh3")])
+metadata/_custom_type_script = "uid://bmharn13hot3y"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4wyf3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -49,10 +68,12 @@ size = Vector3(2, 0.001, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_umx8v"]
 size = Vector3(13.062775, 9.197144, 8.7265625)
 
-[node name="Node3D" type="Node3D" unique_id=866644805]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xxbxq"]
+
+[node name="Node3D" type="Node3D" unique_id=866644805 node_paths=PackedStringArray("SpawnShape")]
 script = ExtResource("1_nnsk1")
-Grass = ExtResource("2_4wyf3")
-Bush = ExtResource("3_k0juu")
+Table = SubResource("Resource_4mrxx")
+SpawnShape = NodePath("SpawnArea/CollisionShape3D")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=982593494]
 environment = SubResource("Environment_71j4m")
@@ -154,5 +175,11 @@ shape = SubResource("BoxShape3D_umx8v")
 [node name="GAMEMANAGER" type="Node" parent="." unique_id=418383822 node_paths=PackedStringArray("uiManager")]
 script = ExtResource("5_71j4m")
 uiManager = NodePath("../CharacterBody3D/Control")
+
+[node name="SpawnArea" type="Area3D" parent="." unique_id=790466267]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnArea" unique_id=672360931]
+transform = Transform3D(22.975225, 0, 0, 0, 2.935905, 0, 0, 0, 20.836172, 0.12127566, 1.5172057, -1.3318412)
+shape = SubResource("BoxShape3D_xxbxq")
 
 [editable path="PlayArea/HOUSEStaticBody3D2/blockbench_export"]
