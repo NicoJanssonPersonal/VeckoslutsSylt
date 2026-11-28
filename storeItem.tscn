@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cn1e5wr8iuccu"]
+
+[ext_resource type="Texture2D" uid="uid://0ccfk5dhmn03" path="res://assets/environment/house_0.png" id="1_6i22m"]
+
+[node name="Control" type="Control" unique_id=234610087]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Item" type="CanvasLayer" parent="." unique_id=1194736404]
+
+[node name="item" type="VBoxContainer" parent="Item" unique_id=1358453987]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="itemPicture" type="TextureRect" parent="Item/item" unique_id=1206828811]
+layout_mode = 2
+texture = ExtResource("1_6i22m")
+expand_mode = 5
+
+[node name="itemTitle" type="Label" parent="Item/item" unique_id=1387641030]
+layout_mode = 2
+text = "SAX"
+
+[node name="itemStats" type="Label" parent="Item/item" unique_id=879071082]
+layout_mode = 2
+text = "+10 damage"
+
+[node name="itemDescription" type="Label" parent="Item/item" unique_id=1361103026]
+layout_mode = 2
+text = "Klipper weeds"
