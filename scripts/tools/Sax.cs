@@ -27,8 +27,8 @@ public partial class Sax : Tools
 				_audioStreamPlayer3D.Play();
 
 				_animPlayer.SpeedScale = 1f; // 1 = 1.75 seconds
-				_animPlayer.Play("klipp");
-				weed.TakeDamage(20);
+				_animPlayer.Play("use");
+				weed.TakeDamage(_damage);
 			}
 		}
 	}

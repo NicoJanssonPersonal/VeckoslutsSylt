@@ -23,7 +23,7 @@ public partial class Scythe : Tools
 			{
 				_isPickingUp = true;
 				_animPlayer.SpeedScale = 1f;
-				_animPlayer.Play("swipe");
+				_animPlayer.Play("use");
 
 				_audioStreamPlayer3D.Play();
 				// Defines the swing radius in meters
@@ -45,7 +45,7 @@ public partial class Scythe : Tools
 				{
 					if (result["collider"].AsGodotObject() is Weed nearbyWeed)
 					{
-						nearbyWeed.TakeDamage(40);
+						nearbyWeed.TakeDamage(_damage);
 					}
 				}
 			}

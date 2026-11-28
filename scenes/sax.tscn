@@ -8,6 +8,7 @@
 script = ExtResource("1_qs7iy")
 _audioStreamPlayer3D = NodePath("saxPlayer")
 _animPlayer = NodePath("SAXEN/AnimationPlayer")
+_damage = 20
 
 [node name="SAXEN" parent="." unique_id=325041708 instance=ExtResource("1_tg2dy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

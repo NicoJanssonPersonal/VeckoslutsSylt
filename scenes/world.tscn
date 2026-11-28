@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://c55ncosuv3lqx"]
 
 [ext_resource type="Script" uid="uid://fbedgxokiy76" path="res://scripts/weeds/WeedSpawner.cs" id="1_nnsk1"]
-[ext_resource type="PackedScene" uid="uid://d1gf102xv42mv" path="res://scenes/grass.tscn" id="2_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://d1gf102xv42mv" path="res://scenes/weeds/grass.tscn" id="2_4wyf3"]
 [ext_resource type="Script" uid="uid://drpe2j2lvodwo" path="res://scripts/weeds/SpawnEntry.cs" id="2_7r4gi"]
 [ext_resource type="Script" uid="uid://bmharn13hot3y" path="res://scripts/weeds/SpawnTable.cs" id="2_i7141"]
 [ext_resource type="PackedScene" uid="uid://mouc27xs81or" path="res://scenes/player.tscn" id="2_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://jfgjukp6b33c" path="res://scenes/bush.tscn" id="3_k0juu"]
+[ext_resource type="PackedScene" uid="uid://jfgjukp6b33c" path="res://scenes/weeds/bush.tscn" id="3_k0juu"]
 [ext_resource type="PackedScene" uid="uid://brdttsx7kypp3" path="res://assets/environment/fence.glb" id="4_k0juu"]
 [ext_resource type="Script" uid="uid://bkfs6rtggmpp2" path="res://scripts/system/Gamemanager.cs" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://b5f6mc6fjgmw4" path="res://scenes/UI.tscn" id="5_i7141"]

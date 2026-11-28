@@ -59,7 +59,7 @@ public partial class GenerateBush : MultiMeshInstance3D
         }
 
         Multimesh = mm;
-    }
+    } 
 
     public override void _Notification(int what)
     {
