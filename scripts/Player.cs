@@ -26,8 +26,8 @@ public partial class Player : CharacterBody3D
 	private float _crouchHeadY;
 	private bool _isCrouching = false;
 	private bool _toolHand = false;
-	private bool _toolSax = !true;
-	private bool _toolScythe = true;
+	private bool _toolSax = true;
+	private bool _toolScythe = !true;
 	public override void _Ready()
 	{
 		Settings.LoadData();
@@ -63,15 +63,15 @@ public partial class Player : CharacterBody3D
 		}
 		if (Input.IsActionJustPressed("action") && _toolHand)
 		{
-			handTool.pickUpWeed();
+			handTool.useTool();
 		}
 		if (Input.IsActionJustPressed("action") && _toolSax)
 		{
-			saxTool.cutWeedWithSax();
+			saxTool.useTool();
 		}
 		if (Input.IsActionJustPressed("action") && _toolScythe)
 		{
-			scytheTool.cutWeedWithScythe();
+			scytheTool.useTool();
 		}
 
 		if (Input.IsActionJustPressed("crouch"))

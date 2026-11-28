@@ -1,27 +1,15 @@
 using Godot;
 using System;
 
-public partial class Scythe : Node3D
+public partial class Scythe : Tools
 {
 
-	[Export] private AudioStreamPlayer3D _audioStreamPlayer3D;
-
-	[Export] private RayCast3D _raycast;
-
-	private AnimationPlayer _animPlayer;
-
-	private bool _isPickingUp = false;
-
-	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		_animPlayer = GetNode<AnimationPlayer>("Lia/AnimationPlayer");
-		_audioStreamPlayer3D.VolumeDb = -40.0f;
-		_animPlayer.AnimationFinished += OnAnimationFinished;
-
+		base._Ready();
 	}
 
-	public void cutWeedWithScythe()
+	public override void useTool()
 	{
 		if (_isPickingUp)
 			return;
@@ -34,10 +22,10 @@ public partial class Scythe : Node3D
 			if (collider is Weed)
 			{
 				_isPickingUp = true;
-				_audioStreamPlayer3D.Play();
 				_animPlayer.SpeedScale = 1f;
 				_animPlayer.Play("swipe");
 
+				_audioStreamPlayer3D.Play();
 				// Defines the swing radius in meters
 				float swingRadius = 1.5f;
 
@@ -57,18 +45,10 @@ public partial class Scythe : Node3D
 				{
 					if (result["collider"].AsGodotObject() is Weed nearbyWeed)
 					{
-						nearbyWeed.TakeDamage(20);
+						nearbyWeed.TakeDamage(40);
 					}
 				}
 			}
-		}
-	}
-	private void OnAnimationFinished(StringName animName)
-	{
-		// 3. Unlock once the "take" animation finishes
-		if (animName == "swipe")
-		{
-			_isPickingUp = false;
 		}
 	}
 }

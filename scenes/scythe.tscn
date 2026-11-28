@@ -1,15 +1,21 @@
 [gd_scene format=3 uid="uid://dncbgtacdf1og"]
 
-[ext_resource type="Script" uid="uid://b424p7ui11c5b" path="res://scripts/Scythe.cs" id="1_te5lg"]
-[ext_resource type="PackedScene" uid="uid://co3nkalkxbuja" path="res://assets/scythe.glb" id="2_pjtfg"]
+[ext_resource type="Script" uid="uid://b424p7ui11c5b" path="res://scripts/tools/Scythe.cs" id="1_te5lg"]
+[ext_resource type="PackedScene" uid="uid://co3nkalkxbuja" path="res://assets/tools/scythe.glb" id="2_pjtfg"]
+[ext_resource type="AudioStream" uid="uid://0llvl6bfl3lc" path="res://sounds/scythe.mp3" id="3_pjtfg"]
 
-[node name="scythe" type="Node3D" unique_id=1229385757]
+[node name="scythe" type="Node3D" unique_id=1229385757 node_paths=PackedStringArray("_audioStreamPlayer3D", "_animPlayer")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 script = ExtResource("1_te5lg")
+_audioStreamPlayer3D = NodePath("AudioStreamPlayer3D")
+_animPlayer = NodePath("Lia/AnimationPlayer")
 
 [node name="Lia" parent="." unique_id=311187460 instance=ExtResource("2_pjtfg")]
 
-[node name="scythe2" parent="Lia" index="0" unique_id=796154030]
+[node name="scythe2" parent="Lia" index="0" unique_id=873160706]
 transform = Transform3D(0.67559016, 0, -0.73727727, 0, 1, 0, 0.73727727, 0, 0.67559016, -0.5, 0.96875, -0.1875)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1227334398]
+stream = ExtResource("3_pjtfg")
 
 [editable path="Lia"]

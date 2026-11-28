@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://b0frlo2iug7e5"]
 
-[ext_resource type="Script" uid="uid://b1gl6bukhm0vm" path="res://scripts/HandTool.cs" id="1_dxfvs"]
+[ext_resource type="Script" uid="uid://b1gl6bukhm0vm" path="res://scripts/tools/HandTool.cs" id="1_dxfvs"]
 [ext_resource type="PackedScene" uid="uid://bfd6dwbxrnfec" path="res://assets/tools/hand.glb" id="2_dxfvs"]
 [ext_resource type="Texture2D" uid="uid://dp760ym3v7ukr" path="res://assets/tools/hand_0.png" id="3_5io2f"]
 
