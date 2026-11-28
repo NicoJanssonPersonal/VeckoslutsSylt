@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://bww32p1nbu80u" path="res://scripts/Player.cs" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://b0frlo2iug7e5" path="res://scenes/handTool.tscn" id="2_g2els"]
 [ext_resource type="AudioStream" uid="uid://bv8rt1ktiytlr" path="res://sounds/plantPickup.mp3" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://d7hnpkousbb1" path="res://scenes/sax.tscn" id="3_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://dncbgtacdf1og" path="res://scenes/scythe.tscn" id="4_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://b5mbfdswg146b" path="res://sounds/sax.mp3" id="6_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://0llvl6bfl3lc" path="res://sounds/scythe.mp3" id="7_fjrip"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_abqvh"]
 
@@ -10,9 +14,11 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cbyeo"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1521399822 node_paths=PackedStringArray("handTool")]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1521399822 node_paths=PackedStringArray("handTool", "saxTool", "scytheTool")]
 script = ExtResource("1_4flbx")
 handTool = NodePath("HEAD/Camera3D/RayCast3D/HandTool")
+saxTool = NodePath("HEAD/Camera3D/RayCast3D/Sax")
+scytheTool = NodePath("HEAD/Camera3D/RayCast3D/scythe")
 
 [node name="HEAD" type="Node3D" parent="." unique_id=557298017]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -26,7 +32,19 @@ collision_mask = 3
 
 [node name="HandTool" parent="HEAD/Camera3D/RayCast3D" unique_id=1960500986 node_paths=PackedStringArray("_audioStreamPlayer3D", "_raycast") instance=ExtResource("2_g2els")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49649596, -0.3778087, -0.80246073)
+visible = false
 _audioStreamPlayer3D = NodePath("../../../../Audio/PickupPlayer")
+_raycast = NodePath("..")
+
+[node name="Sax" parent="HEAD/Camera3D/RayCast3D" unique_id=191709495 node_paths=PackedStringArray("_audioStreamPlayer3D", "_raycast") instance=ExtResource("3_qlg0r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.40573382, -1.0989139)
+visible = false
+_audioStreamPlayer3D = NodePath("../../../../Audio/saxPlayer")
+_raycast = NodePath("..")
+
+[node name="scythe" parent="HEAD/Camera3D/RayCast3D" unique_id=1229385757 node_paths=PackedStringArray("_audioStreamPlayer3D", "_raycast") instance=ExtResource("4_tuyoq")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.39154994, -1.4782699, -1.223116)
+_audioStreamPlayer3D = NodePath("../../../../Audio/scythePlayer")
 _raycast = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=244889598]
@@ -42,5 +60,15 @@ mesh = SubResource("CapsuleMesh_cbyeo")
 
 [node name="PickupPlayer" type="AudioStreamPlayer3D" parent="Audio" unique_id=1960687838]
 stream = ExtResource("3_qhqgy")
+volume_db = -40.0
+max_polyphony = 5
+
+[node name="saxPlayer" type="AudioStreamPlayer3D" parent="Audio" unique_id=1001387135]
+stream = ExtResource("6_tuyoq")
+volume_db = -40.0
+max_polyphony = 5
+
+[node name="scythePlayer" type="AudioStreamPlayer3D" parent="Audio" unique_id=1971618083]
+stream = ExtResource("7_fjrip")
 volume_db = -40.0
 max_polyphony = 5

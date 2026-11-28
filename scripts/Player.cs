@@ -5,6 +5,10 @@ public partial class Player : CharacterBody3D
 {
 
 	[Export] private HandTool handTool;
+	[Export] private Sax saxTool;
+	[Export] private Scythe scytheTool;
+
+
 	private Camera3D _cam;
 	private Node3D _head;
 	private CollisionShape3D _colShape;
@@ -21,7 +25,9 @@ public partial class Player : CharacterBody3D
 	private float _standHeadY;
 	private float _crouchHeadY;
 	private bool _isCrouching = false;
-	private bool _toolHand = true;
+	private bool _toolHand = false;
+	private bool _toolSax = !true;
+	private bool _toolScythe = true;
 	public override void _Ready()
 	{
 		Settings.LoadData();
@@ -58,6 +64,14 @@ public partial class Player : CharacterBody3D
 		if (Input.IsActionJustPressed("action") && _toolHand)
 		{
 			handTool.pickUpWeed();
+		}
+		if (Input.IsActionJustPressed("action") && _toolSax)
+		{
+			saxTool.cutWeedWithSax();
+		}
+		if (Input.IsActionJustPressed("action") && _toolScythe)
+		{
+			scytheTool.cutWeedWithScythe();
 		}
 
 		if (Input.IsActionJustPressed("crouch"))
