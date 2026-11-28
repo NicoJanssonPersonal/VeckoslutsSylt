@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dnjahaqknqa4"]
+
+[ext_resource type="Texture2D" uid="uid://cfspor0mpmk3p" path="res://assets/icons/handIconArtboard-1.png" id="1_meyvl"]
+
+[node name="CanvasLayer" type="MarginContainer" unique_id=1577150487]
+custom_minimum_size = Vector2(180, 300)
+offset_right = 180.0
+offset_bottom = 300.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1818127453]
+layout_mode = 2
+
+[node name="item" type="VBoxContainer" parent="." unique_id=1674397614]
+layout_mode = 2
+
+[node name="itemPicture" type="TextureRect" parent="item" unique_id=485543033]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_meyvl")
+expand_mode = 3
+
+[node name="itemTitel" type="Label" parent="item" unique_id=115564183]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "The Super Tool"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="itemDesc" type="Label" parent="item" unique_id=1810153334]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "This item is better then the last one because this one does €this thing better and €this much faster"
+autowrap_mode = 3
+
+[node name="itemStats" type="Label" parent="item" unique_id=628967684]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "40 weed cutting power
+1.5 second action speed"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="BUYBUTTON" type="Button" parent="item" unique_id=1329943416]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "PURCHASE"
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=937273476]
+visible = false
+layout_mode = 2
+color = Color(0.23392546, 0.23392546, 0.23392543, 0.4509804)
+
+[node name="Label" type="Label" parent="ColorRect2" unique_id=1592164309]
+layout_mode = 0
+offset_left = 52.999996
+offset_top = 103.0
+offset_right = 137.0
+offset_bottom = 148.0
+rotation = 0.62771344
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "SOLD"

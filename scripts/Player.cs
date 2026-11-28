@@ -25,7 +25,7 @@ public partial class Player : CharacterBody3D
 	private float _standHeadY;
 	private float _crouchHeadY;
 	private bool _isCrouching = false;
-	private bool _toolHand = false;
+	private bool _toolHand = !true;
 	private bool _toolSax = !true;
 	private bool _toolScythe = true;
 	public override void _Ready()
