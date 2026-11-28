@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dk2n6v17p2cak"]
+
+[ext_resource type="Script" uid="uid://dd7muoutrsxhd" path="res://scripts/Settings.cs" id="1_5p8wc"]
+
+[node name="settings" type="CanvasLayer" unique_id=314644013 node_paths=PackedStringArray("_applyButton", "_Sensitivty")]
+process_mode = 3
+visible = false
+script = ExtResource("1_5p8wc")
+_applyButton = NodePath("APPLY")
+_Sensitivty = NodePath("SENSITIVITY(HBOX)/LineEdit")
+
+[node name="SENSITIVITY(HBOX)" type="HBoxContainer" parent="." unique_id=988513154]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -20.0
+offset_right = 82.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SENSITIVITY(HBOX)" unique_id=885869423]
+layout_mode = 2
+text = "SENSITIVITY"
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="SENSITIVITY(HBOX)" unique_id=1699358245]
+layout_mode = 2
+
+[node name="APPLY" type="Button" parent="." unique_id=1779904098]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.5
+offset_top = -31.0
+offset_right = 28.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "APPLY"

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dgq8k2rakfk4b"]
+
+[node name="pauseMenu" type="CanvasLayer" unique_id=348420976]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1153845043]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -50.5
+offset_right = 41.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=80796802]
+layout_mode = 2
+text = "PLAY"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=47276848]
+layout_mode = 2
+text = "SETTINGS
+"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1060739046]
+layout_mode = 2
+text = "QUIT
+"

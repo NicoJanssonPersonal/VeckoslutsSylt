@@ -10,6 +10,10 @@ public partial class EventBus : Node
     [Signal]
     public delegate void WeedPickedEventHandler();
 
+    [Signal]
+    public delegate void ReOpenMainMenuEventHandler();
+    
+
     public override void _EnterTree()
     {
         Instance = this;

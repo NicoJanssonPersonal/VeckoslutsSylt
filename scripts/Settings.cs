@@ -28,7 +28,7 @@ public partial class Settings : CanvasLayer
 		if (!float.TryParse(_Sensitivty.Text, out float parsedSens))
 		{
 			GD.PushWarning("Invalid sensitivity input, reverting to default.");
-			parsedSens = 1/1000;
+			parsedSens = 1f;
 		}
 
 		MouseSensitivity = parsedSens/1000;
@@ -43,7 +43,7 @@ public partial class Settings : CanvasLayer
 		}
 
 		GetTree().Paused = false;
-		Input.MouseMode = Input.MouseModeEnum.Captured;
+		EventBus.Instance.EmitSignal(EventBus.SignalName.ReOpenMainMenu);
 		this.Visible = false;
 	}
 

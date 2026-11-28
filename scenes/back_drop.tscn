@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b5w77og60nd6o" path="res://assets/snigel.glb" id="1_hm8oe"]
 [ext_resource type="Script" uid="uid://dvmubicjuagh7" path="res://scripts/CameraOrbit.cs" id="2_idsek"]
+[ext_resource type="PackedScene" uid="uid://nboxj3pndqqt" path="res://assets/house.glb" id="3_idsek"]
+[ext_resource type="PackedScene" uid="uid://brdttsx7kypp3" path="res://assets/fence.glb" id="3_yqwdb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hm8oe"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -26,17 +28,11 @@ ssil_radius = 6.0
 sdfgi_enabled = true
 sdfgi_energy = 1.3
 glow_enabled = true
-fog_mode = 1
-fog_density = 0.0016
-fog_aerial_perspective = 0.5
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_yqwdb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ov08j"]
 albedo_color = Color(0.29411766, 0.44313726, 0.25490198, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_qyabo"]
-size = Vector3(2, 0.001, 2)
 
 [node name="BackDrop" type="Node3D" unique_id=1009841782]
 
@@ -56,15 +52,48 @@ shadow_bias = 0.01
 script = ExtResource("2_idsek")
 
 [node name="Camera3D" type="Camera3D" parent="CamerPivot" unique_id=1048179904]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0.25, 0.5)
+transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 0, 0.05, 0.25)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1230919525]
+[node name="PlayArea" type="Node" parent="." unique_id=412850559]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1533169046]
+[node name="FENCEStaticBody3D" type="StaticBody3D" parent="PlayArea" unique_id=2122070653]
+
+[node name="blockbench_export" parent="PlayArea/FENCEStaticBody3D" unique_id=1737441417 instance=ExtResource("3_yqwdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9.318)
+
+[node name="blockbench_export2" parent="PlayArea/FENCEStaticBody3D" unique_id=694401412 instance=ExtResource("3_yqwdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 9.318)
+
+[node name="blockbench_export4" parent="PlayArea/FENCEStaticBody3D" unique_id=1230472626 instance=ExtResource("3_yqwdb")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.52, 0, 3.5)
+
+[node name="blockbench_export5" parent="PlayArea/FENCEStaticBody3D" unique_id=45840822 instance=ExtResource("3_yqwdb")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.52, 0, -8.5)
+
+[node name="blockbench_export10" parent="PlayArea/FENCEStaticBody3D" unique_id=2102854486 instance=ExtResource("3_yqwdb")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.52, 0, -20.5)
+
+[node name="blockbench_export6" parent="PlayArea/FENCEStaticBody3D" unique_id=1159367944 instance=ExtResource("3_yqwdb")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.52, 0, 3.5)
+
+[node name="blockbench_export7" parent="PlayArea/FENCEStaticBody3D" unique_id=581817070 instance=ExtResource("3_yqwdb")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.52, 0, -8.5)
+
+[node name="blockbench_export8" parent="PlayArea/FENCEStaticBody3D" unique_id=844955811 instance=ExtResource("3_yqwdb")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12, 0, 3.5)
+
+[node name="blockbench_export9" parent="PlayArea/FENCEStaticBody3D" unique_id=1810141019 instance=ExtResource("3_yqwdb")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12, 0, -8.5)
+
+[node name="HOUSEStaticBody3D2" type="StaticBody3D" parent="PlayArea" unique_id=1187361530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.999445, 0, 3.0126371)
+
+[node name="blockbench_export" parent="PlayArea/HOUSEStaticBody3D2" unique_id=753965131 instance=ExtResource("3_idsek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1195128, -15.213434)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayArea" unique_id=1014646148]
 transform = Transform3D(14.448255, 0, 0, 0, 1, 0, 0, 0, 17.947035, 0, 0, -5.036662)
 mesh = SubResource("PlaneMesh_yqwdb")
 surface_material_override/0 = SubResource("StandardMaterial3D_ov08j")
 
-[node name="Floor" type="CollisionShape3D" parent="StaticBody3D" unique_id=1264525979]
-transform = Transform3D(14.448255, 0, 0, 0, 1, 0, 0, 0, 17.947035, 0, 0, -1.7965107)
-shape = SubResource("BoxShape3D_qyabo")
+[editable path="PlayArea/HOUSEStaticBody3D2/blockbench_export"]
