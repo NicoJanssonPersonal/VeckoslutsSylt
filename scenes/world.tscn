@@ -13,12 +13,12 @@
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_k0juu"]
+[sub_resource type="Sky" id="Sky_4mrxx"]
 sky_material = SubResource("ProceduralSkyMaterial_4wyf3")
 
 [sub_resource type="Environment" id="Environment_71j4m"]
 background_mode = 2
-sky = SubResource("Sky_k0juu")
+sky = SubResource("Sky_4mrxx")
 ambient_light_energy = 0.6
 reflected_light_source = 2
 tonemap_mode = 4
@@ -44,8 +44,10 @@ albedo_color = Color(0.29411766, 0.44313726, 0.25490198, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_rwgxs"]
 size = Vector3(2, 0.001, 2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cbyeo"]
-size = Vector3(12.404236, 9.7323, 8.59082)
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_umx8v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_umx8v"]
+size = Vector3(13.062775, 9.197144, 8.7265625)
 
 [node name="Node3D" type="Node3D" unique_id=866644805]
 script = ExtResource("1_nnsk1")
@@ -60,61 +62,97 @@ transform = Transform3D(-0.54610187, 0.4188594, -0.72548574, 0, 0.8660254, 0.5, 
 light_color = Color(1, 1, 0.84313726, 1)
 light_energy = 2.6
 shadow_enabled = true
+shadow_bias = 0.01
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=157918138]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1999824512]
-transform = Transform3D(14.448255, 0, 0, 0, 1, 0, 0, 0, 15.208283, 0, 0, -1.7965107)
+transform = Transform3D(14.448255, 0, 0, 0, 1, 0, 0, 0, 17.947035, 0, 0, -5.036662)
 mesh = SubResource("PlaneMesh_xxbxq")
 surface_material_override/0 = SubResource("StandardMaterial3D_ro3t7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=951175739]
-transform = Transform3D(14.448255, 0, 0, 0, 1, 0, 0, 0, 15.208283, 0, 0, -1.7965107)
+[node name="Floor" type="CollisionShape3D" parent="StaticBody3D" unique_id=951175739]
+transform = Transform3D(14.448255, 0, 0, 0, 1, 0, 0, 0, 17.947035, 0, 0, -1.7965107)
 shape = SubResource("BoxShape3D_rwgxs")
 
 [node name="CharacterBody3D" parent="." unique_id=1521399822 instance=ExtResource("2_rwgxs")]
 
 [node name="Control" parent="CharacterBody3D" unique_id=714371345 instance=ExtResource("5_i7141")]
+metadata/_edit_use_anchors_ = true
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=758945667]
 
-[node name="FENCEStaticBody3D" type="StaticBody3D" parent="." unique_id=591509755]
+[node name="PlayArea" type="Node" parent="." unique_id=1040579492]
 
-[node name="blockbench_export" parent="FENCEStaticBody3D" unique_id=1108929208 instance=ExtResource("4_k0juu")]
+[node name="FENCEStaticBody3D" type="StaticBody3D" parent="PlayArea" unique_id=591509755]
+
+[node name="blockbench_export" parent="PlayArea/FENCEStaticBody3D" unique_id=1108929208 instance=ExtResource("4_k0juu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9.318)
 
-[node name="blockbench_export2" parent="FENCEStaticBody3D" unique_id=1185393744 instance=ExtResource("4_k0juu")]
+[node name="blockbench_export2" parent="PlayArea/FENCEStaticBody3D" unique_id=1185393744 instance=ExtResource("4_k0juu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 9.318)
 
-[node name="blockbench_export4" parent="FENCEStaticBody3D" unique_id=26107132 instance=ExtResource("4_k0juu")]
+[node name="blockbench_export4" parent="PlayArea/FENCEStaticBody3D" unique_id=26107132 instance=ExtResource("4_k0juu")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.52, 0, 3.5)
 
-[node name="blockbench_export5" parent="FENCEStaticBody3D" unique_id=1517568508 instance=ExtResource("4_k0juu")]
+[node name="blockbench_export5" parent="PlayArea/FENCEStaticBody3D" unique_id=1517568508 instance=ExtResource("4_k0juu")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.52, 0, -8.5)
 
-[node name="blockbench_export6" parent="FENCEStaticBody3D" unique_id=1672956987 instance=ExtResource("4_k0juu")]
+[node name="blockbench_export10" parent="PlayArea/FENCEStaticBody3D" unique_id=1737441417 instance=ExtResource("4_k0juu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.52, 0, -20.5)
+
+[node name="blockbench_export6" parent="PlayArea/FENCEStaticBody3D" unique_id=1672956987 instance=ExtResource("4_k0juu")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.52, 0, 3.5)
 
-[node name="blockbench_export7" parent="FENCEStaticBody3D" unique_id=1654316829 instance=ExtResource("4_k0juu")]
+[node name="blockbench_export7" parent="PlayArea/FENCEStaticBody3D" unique_id=1654316829 instance=ExtResource("4_k0juu")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.52, 0, -8.5)
 
-[node name="blockbench_export8" parent="FENCEStaticBody3D" unique_id=759237227 instance=ExtResource("4_k0juu")]
+[node name="blockbench_export8" parent="PlayArea/FENCEStaticBody3D" unique_id=759237227 instance=ExtResource("4_k0juu")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12, 0, 3.5)
 
-[node name="blockbench_export9" parent="FENCEStaticBody3D" unique_id=890817155 instance=ExtResource("4_k0juu")]
+[node name="blockbench_export9" parent="PlayArea/FENCEStaticBody3D" unique_id=890817155 instance=ExtResource("4_k0juu")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12, 0, -8.5)
 
-[node name="HOUSEStaticBody3D2" type="StaticBody3D" parent="." unique_id=822226909]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayArea/FENCEStaticBody3D" unique_id=242567543]
+transform = Transform3D(8.742278e-08, 2, -3.019916e-07, 2, -8.742278e-08, 0, -1.3200472e-14, -3.019916e-07, -2, -11.413928, 0, -6.414048)
+shape = SubResource("WorldBoundaryShape3D_umx8v")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HOUSEStaticBody3D2" unique_id=1528983528]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026275635, 4.2466373, -19.008844)
-shape = SubResource("BoxShape3D_cbyeo")
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="PlayArea/FENCEStaticBody3D" unique_id=203407382]
+transform = Transform3D(-5.6824803e-08, -1.3, 0, 1.3, -5.6824803e-08, 0, 0, 0, 1.3, 11.921065, 0, -2.2574759)
+shape = SubResource("WorldBoundaryShape3D_umx8v")
 
-[node name="blockbench_export" parent="HOUSEStaticBody3D2" unique_id=1684592940 instance=ExtResource("7_4mrxx")]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PlayArea/FENCEStaticBody3D" unique_id=2105157279]
+transform = Transform3D(2.483891e-15, 5.6824803e-08, -1.3, 1.3, -5.6824803e-08, 0, -5.6824803e-08, -1.3, -5.6824803e-08, -0.16673279, 0, 9.263868)
+shape = SubResource("WorldBoundaryShape3D_umx8v")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="PlayArea/FENCEStaticBody3D" unique_id=1435671128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.505118, 1.0650024, -8.023575)
+size = Vector3(0.034057617, 3.130005, 36.68753)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="PlayArea/FENCEStaticBody3D" unique_id=1331981878]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.70333385, 1.0650024, 9.327099)
+size = Vector3(0.034057617, 3.130005, 24.69934)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="PlayArea/FENCEStaticBody3D" unique_id=86824998]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.1333036, 1.8405457, -11.747527)
+size = Vector3(0.034057617, 4.6810913, 12.425919)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="PlayArea/FENCEStaticBody3D" unique_id=2031076025]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.122252, 1.0650024, -2.02948)
+size = Vector3(0.05419922, 3.130005, 24.69934)
+
+[node name="HOUSEStaticBody3D2" type="StaticBody3D" parent="PlayArea" unique_id=822226909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.999445, 0, 3.0126371)
+
+[node name="blockbench_export" parent="PlayArea/HOUSEStaticBody3D2" unique_id=1684592940 instance=ExtResource("7_4mrxx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1195128, -15.213434)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayArea/HOUSEStaticBody3D2" unique_id=1118660589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23146057, 4.098572, -18.890541)
+shape = SubResource("BoxShape3D_umx8v")
 
 [node name="GAMEMANAGER" type="Node" parent="." unique_id=418383822 node_paths=PackedStringArray("uiManager")]
 script = ExtResource("5_71j4m")
 uiManager = NodePath("../CharacterBody3D/Control")
 
-[editable path="HOUSEStaticBody3D2/blockbench_export"]
+[editable path="PlayArea/HOUSEStaticBody3D2/blockbench_export"]

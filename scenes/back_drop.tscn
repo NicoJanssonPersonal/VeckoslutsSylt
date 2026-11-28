@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://hoabxmsic4a6"]
+
+[ext_resource type="PackedScene" uid="uid://b5w77og60nd6o" path="res://assets/snigel.glb" id="1_hm8oe"]
+[ext_resource type="Script" uid="uid://dvmubicjuagh7" path="res://scripts/CameraOrbit.cs" id="2_idsek"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hm8oe"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_k0juu"]
+sky_material = SubResource("ProceduralSkyMaterial_hm8oe")
+
+[sub_resource type="Environment" id="Environment_idsek"]
+background_mode = 2
+sky = SubResource("Sky_k0juu")
+ambient_light_energy = 0.6
+reflected_light_source = 2
+tonemap_mode = 4
+tonemap_exposure = 1.12
+tonemap_agx_contrast = 1.32
+ssao_enabled = true
+ssao_radius = 1.4
+ssao_intensity = 2.4
+ssil_enabled = true
+ssil_radius = 6.0
+sdfgi_enabled = true
+sdfgi_energy = 1.3
+glow_enabled = true
+fog_mode = 1
+fog_density = 0.0016
+fog_aerial_perspective = 0.5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yqwdb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ov08j"]
+albedo_color = Color(0.29411766, 0.44313726, 0.25490198, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qyabo"]
+size = Vector3(2, 0.001, 2)
+
+[node name="BackDrop" type="Node3D" unique_id=1009841782]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1887865955]
+environment = SubResource("Environment_idsek")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1597044453]
+transform = Transform3D(-0.54610187, 0.4188594, -0.72548574, 0, 0.8660254, 0.5, 0.8377188, 0.27305093, -0.4729381, 0, 0, 0)
+light_color = Color(1, 1, 0.84313726, 1)
+light_energy = 2.6
+shadow_enabled = true
+shadow_bias = 0.01
+
+[node name="blockbench_export" parent="." unique_id=1967292675 instance=ExtResource("1_hm8oe")]
+
+[node name="CamerPivot" type="Node3D" parent="." unique_id=539661894]
+script = ExtResource("2_idsek")
+
+[node name="Camera3D" type="Camera3D" parent="CamerPivot" unique_id=1048179904]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0.25, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1230919525]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1533169046]
+transform = Transform3D(14.448255, 0, 0, 0, 1, 0, 0, 0, 17.947035, 0, 0, -5.036662)
+mesh = SubResource("PlaneMesh_yqwdb")
+surface_material_override/0 = SubResource("StandardMaterial3D_ov08j")
+
+[node name="Floor" type="CollisionShape3D" parent="StaticBody3D" unique_id=1264525979]
+transform = Transform3D(14.448255, 0, 0, 0, 1, 0, 0, 0, 17.947035, 0, 0, -1.7965107)
+shape = SubResource("BoxShape3D_qyabo")
