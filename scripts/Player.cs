@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class Player : CharacterBody3D
 {
@@ -25,6 +24,7 @@ public partial class Player : CharacterBody3D
 	private float _standHeadY;
 	private float _crouchHeadY;
 	private bool _isCrouching = false;
+    private Tools tool;
 	private bool _toolHand = false;
 	private bool _toolSax = !true;
 	private bool _toolScythe = true;

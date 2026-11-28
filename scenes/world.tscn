@@ -246,7 +246,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.999445, 0, 3.0126371)
 [node name="blockbench_export" parent="PlayArea/HOUSEStaticBody3D2" unique_id=1684592940 instance=ExtResource("7_4mrxx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1195128, -15.213434)
 
-[node name="house" parent="PlayArea/HOUSEStaticBody3D2/blockbench_export" index="0" unique_id=1855029170]
+[node name="house" parent="PlayArea/HOUSEStaticBody3D2/blockbench_export" index="0" unique_id=981960559]
 mesh = SubResource("ArrayMesh_jhx03")
 
 [node name="roof2" type="MeshInstance3D" parent="PlayArea/HOUSEStaticBody3D2/blockbench_export" unique_id=607097275]
@@ -288,9 +288,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.167294, 0, 0)
 
 [node name="blockbench_export6" parent="Background" unique_id=1716870985 instance=ExtResource("13_xo05s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1919575, 0, 11.510047)
-
-[node name="blockbench_export7" parent="Background" unique_id=1758687156 instance=ExtResource("13_xo05s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0228343, 0, -0.5799961)
 
 [node name="blockbench_export10" parent="Background" unique_id=640797873 instance=ExtResource("13_xo05s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.245419, 0, 17.920498)
