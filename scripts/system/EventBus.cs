@@ -12,8 +12,11 @@ public partial class EventBus : Node
 
     [Signal]
     public delegate void ReOpenMainMenuEventHandler();
-    
 
+    [Signal]
+    public delegate void currentMoneyEventHandler(float money);
+    
+    
     public override void _EnterTree()
     {
         Instance = this;

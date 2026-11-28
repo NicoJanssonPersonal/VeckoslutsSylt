@@ -1,15 +1,24 @@
 [gd_scene format=3 uid="uid://dnjahaqknqa4"]
 
+[ext_resource type="Script" uid="uid://bmefcv6opto4x" path="res://scripts/StoreItemCard.cs" id="1_eh5df"]
 [ext_resource type="Texture2D" uid="uid://cfspor0mpmk3p" path="res://assets/icons/handIconArtboard-1.png" id="1_meyvl"]
 
-[node name="CanvasLayer" type="MarginContainer" unique_id=1577150487]
-custom_minimum_size = Vector2(180, 300)
+[node name="marginContainer" type="MarginContainer" unique_id=1577150487 node_paths=PackedStringArray("itemTitleLabel", "itemDescLabel", "itemStatsLabel", "itemImageRect", "_buyButton", "_bought")]
+custom_minimum_size = Vector2(180, 150)
 offset_right = 180.0
-offset_bottom = 300.0
+offset_bottom = 314.0
+size_flags_horizontal = 6
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
+script = ExtResource("1_eh5df")
+itemTitleLabel = NodePath("item/itemTitel")
+itemDescLabel = NodePath("item/itemDesc")
+itemStatsLabel = NodePath("item/itemStats")
+itemImageRect = NodePath("item/itemPicture")
+_buyButton = NodePath("item/BUYBUTTON")
+_bought = NodePath("ColorRect2")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1818127453]
 layout_mode = 2
@@ -56,7 +65,9 @@ autowrap_mode = 1
 [node name="BUYBUTTON" type="Button" parent="item" unique_id=1329943416]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
-text = "PURCHASE"
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+text = "10"
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=937273476]
 visible = false

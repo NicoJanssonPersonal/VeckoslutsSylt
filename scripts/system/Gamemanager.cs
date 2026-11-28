@@ -25,6 +25,7 @@ public partial class Gamemanager : Node
 		_currentMoney += moneyToAdd;
 		uiManager.displayMoney(_currentMoney.ToString("F2"));
 		_isDirty = true;
+        EventBus.Instance.EmitSignal(EventBus.SignalName.currentMoney, _currentMoney);
 	}
 
 	public void UpdateWeedsPicked()

@@ -1,65 +1,48 @@
 [gd_scene format=3 uid="uid://ddppuqkhcny64"]
 
+[ext_resource type="Script" uid="uid://bgnglxbstlgdp" path="res://scripts/SuperWeedWhackerShop.cs" id="1_0gaoc"]
 [ext_resource type="PackedScene" uid="uid://dnjahaqknqa4" path="res://scenes/storeItemCard.tscn" id="1_fx411"]
 
-[node name="SuperWeedWhackerShop" type="Control" unique_id=1239300706]
+[node name="SuperWeedWhackerShop" type="Control" unique_id=1239300706 node_paths=PackedStringArray("_grid")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0gaoc")
+_grid = NodePath("CanvasLayer/VScrollBar/Panel/VBoxContainer2/grid")
+_storeCardScene = ExtResource("1_fx411")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1930238214]
 
-[node name="Panel" type="PanelContainer" parent="CanvasLayer" unique_id=348730975]
-custom_minimum_size = Vector2(648, 648)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -324.0
-offset_top = -324.0
-offset_right = 324.0
-offset_bottom = 324.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VScrollBar" type="ScrollContainer" parent="CanvasLayer" unique_id=401407475]
+custom_minimum_size = Vector2(648, 0)
+offset_left = 252.0
+offset_right = 260.0
+offset_bottom = 648.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=882429910]
+[node name="Panel" type="PanelContainer" parent="CanvasLayer/VScrollBar" unique_id=348730975]
+custom_minimum_size = Vector2(648, 648)
 layout_mode = 2
 
-[node name="SiteTitle" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=2066285712]
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/VScrollBar/Panel" unique_id=1917422368]
+layout_mode = 2
+
+[node name="SiteTitle" type="Label" parent="CanvasLayer/VScrollBar/Panel/VBoxContainer2" unique_id=2066285712]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 48
 text = "SuperWeedWhackers.com"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/VBoxContainer" unique_id=394566876]
+[node name="grid" type="GridContainer" parent="CanvasLayer/VScrollBar/Panel/VBoxContainer2" unique_id=1682233576]
 custom_minimum_size = Vector2(648, 0)
 layout_mode = 2
-theme_override_constants/separation = 54
+size_flags_vertical = 3
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 3
 
-[node name="CanvasLayer2" parent="CanvasLayer/Panel/VBoxContainer/HBoxContainer" unique_id=1841778042 instance=ExtResource("1_fx411")]
-layout_mode = 2
-
-[node name="CanvasLayer3" parent="CanvasLayer/Panel/VBoxContainer/HBoxContainer" unique_id=632409169 instance=ExtResource("1_fx411")]
-layout_mode = 2
-
-[node name="CanvasLayer4" parent="CanvasLayer/Panel/VBoxContainer/HBoxContainer" unique_id=951015351 instance=ExtResource("1_fx411")]
-layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1872998060]
-custom_minimum_size = Vector2(648, 0)
-layout_mode = 2
-theme_override_constants/separation = 54
-
-[node name="CanvasLayer2" parent="CanvasLayer/Panel/VBoxContainer/HBoxContainer2" unique_id=1016367204 instance=ExtResource("1_fx411")]
-layout_mode = 2
-
-[node name="CanvasLayer3" parent="CanvasLayer/Panel/VBoxContainer/HBoxContainer2" unique_id=1755408130 instance=ExtResource("1_fx411")]
-layout_mode = 2
-
-[node name="CanvasLayer4" parent="CanvasLayer/Panel/VBoxContainer/HBoxContainer2" unique_id=1785391065 instance=ExtResource("1_fx411")]
+[node name="CanvasLayer2" parent="CanvasLayer/VScrollBar/Panel/VBoxContainer2/grid" unique_id=1841778042 instance=ExtResource("1_fx411")]
 layout_mode = 2
