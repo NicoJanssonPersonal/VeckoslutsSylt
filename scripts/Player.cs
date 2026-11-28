@@ -26,8 +26,8 @@ public partial class Player : CharacterBody3D
 	private float _crouchHeadY;
 	private bool _isCrouching = false;
 	private bool _toolHand = false;
-	private bool _toolSax = true;
-	private bool _toolScythe = !true;
+	private bool _toolSax = !true;
+	private bool _toolScythe = true;
 	public override void _Ready()
 	{
 		Settings.LoadData();
@@ -45,7 +45,6 @@ public partial class Player : CharacterBody3D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		if (!IsMultiplayerAuthority()) return;
 		float dt = (float)delta;
 
 		Vector3 velocity = Velocity;

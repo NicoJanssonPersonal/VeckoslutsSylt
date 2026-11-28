@@ -26,8 +26,8 @@ public partial class HandTool : Tools
 				_audioStreamPlayer3D.Play();
 
 				_animPlayer.SpeedScale = 1f; // 1 = 1.75 seconds
-				_animPlayer.Play("take");
-				weed.TakeDamage(10);
+				_animPlayer.Play("use");
+				weed.TakeDamage(_damage);
 			}
 
 

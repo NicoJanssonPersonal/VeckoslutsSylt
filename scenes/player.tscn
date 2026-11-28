@@ -4,7 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://b0frlo2iug7e5" path="res://scenes/handTool.tscn" id="2_g2els"]
 [ext_resource type="AudioStream" uid="uid://bv8rt1ktiytlr" path="res://sounds/plantPickup.mp3" id="3_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://d7hnpkousbb1" path="res://scenes/sax.tscn" id="3_qlg0r"]
+[ext_resource type="Script" uid="uid://b1gl6bukhm0vm" path="res://scripts/tools/HandTool.cs" id="3_ur7pv"]
 [ext_resource type="PackedScene" uid="uid://dncbgtacdf1og" path="res://scenes/scythe.tscn" id="4_tuyoq"]
+[ext_resource type="Script" uid="uid://bpvkgmvi1s2x7" path="res://scripts/tools/Sax.cs" id="5_y4r1p"]
+[ext_resource type="Script" uid="uid://b424p7ui11c5b" path="res://scripts/tools/Scythe.cs" id="7_d2wvv"]
 [ext_resource type="AudioStream" uid="uid://0llvl6bfl3lc" path="res://sounds/scythe.mp3" id="7_fjrip"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_abqvh"]
@@ -29,20 +32,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58134985, -0.036718965)
 target_position = Vector3(0, 0, -10)
 collision_mask = 3
 
-[node name="HandTool" parent="HEAD/Camera3D/RayCast3D" unique_id=1960500986 node_paths=PackedStringArray("_audioStreamPlayer3D", "_raycast") instance=ExtResource("2_g2els")]
+[node name="HandTool" parent="HEAD/Camera3D/RayCast3D" unique_id=1960500986 instance=ExtResource("2_g2els")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49649596, -0.3778087, -0.80246073)
 visible = false
-_audioStreamPlayer3D = NodePath("../../../../Audio/PickupPlayer")
-_raycast = NodePath("..")
+script = ExtResource("3_ur7pv")
 
-[node name="Sax" parent="HEAD/Camera3D/RayCast3D" unique_id=191709495 node_paths=PackedStringArray("_raycast") instance=ExtResource("3_qlg0r")]
+[node name="Sax" parent="HEAD/Camera3D/RayCast3D" unique_id=191709495 instance=ExtResource("3_qlg0r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.40573382, -1.0989139)
-_raycast = NodePath("..")
-
-[node name="scythe" parent="HEAD/Camera3D/RayCast3D" unique_id=1229385757 node_paths=PackedStringArray("_raycast") instance=ExtResource("4_tuyoq")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.39154994, -1.4782699, -1.223116)
 visible = false
-_raycast = NodePath("..")
+script = ExtResource("5_y4r1p")
+
+[node name="scythe" parent="HEAD/Camera3D/RayCast3D" unique_id=1229385757 instance=ExtResource("4_tuyoq")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.39154994, -1.4782699, -1.223116)
+script = ExtResource("7_d2wvv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=244889598]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
