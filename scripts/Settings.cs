@@ -57,6 +57,6 @@ public partial class Settings : CanvasLayer
 			return;
 		}
 
-		MouseSensitivity = (float)config.GetValue("Settings", "Sens", 0.05f);
+		MouseSensitivity = (float)config.GetValue("Settings", "Sens", 1/1000f);
 	}
 }

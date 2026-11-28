@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://brdttsx7kypp3" path="res://assets/fence.glb" id="4_k0juu"]
 [ext_resource type="Script" uid="uid://bkfs6rtggmpp2" path="res://scripts/Gamemanager.cs" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://b5f6mc6fjgmw4" path="res://scenes/UI.tscn" id="5_i7141"]
+[ext_resource type="PackedScene" uid="uid://nboxj3pndqqt" path="res://assets/house.glb" id="7_4mrxx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4wyf3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -18,7 +19,22 @@ sky_material = SubResource("ProceduralSkyMaterial_4wyf3")
 [sub_resource type="Environment" id="Environment_71j4m"]
 background_mode = 2
 sky = SubResource("Sky_k0juu")
+ambient_light_energy = 0.6
+reflected_light_source = 2
+tonemap_mode = 4
+tonemap_exposure = 1.12
+tonemap_agx_contrast = 1.32
+ssao_enabled = true
+ssao_radius = 1.4
+ssao_intensity = 2.4
+ssil_enabled = true
+ssil_radius = 6.0
+sdfgi_enabled = true
+sdfgi_energy = 1.3
 glow_enabled = true
+fog_mode = 1
+fog_density = 0.0016
+fog_aerial_perspective = 0.5
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xxbxq"]
 
@@ -27,6 +43,9 @@ albedo_color = Color(0.29411766, 0.44313726, 0.25490198, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rwgxs"]
 size = Vector3(2, 0.001, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cbyeo"]
+size = Vector3(12.404236, 9.7323, 8.59082)
 
 [node name="Node3D" type="Node3D" unique_id=866644805]
 script = ExtResource("1_nnsk1")
@@ -37,7 +56,9 @@ Bush = ExtResource("3_k0juu")
 environment = SubResource("Environment_71j4m")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1542631706]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.54610187, 0.4188594, -0.72548574, 0, 0.8660254, 0.5, 0.8377188, 0.27305093, -0.4729381, 0, 0, 0)
+light_color = Color(1, 1, 0.84313726, 1)
+light_energy = 2.6
 shadow_enabled = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=157918138]
@@ -83,6 +104,17 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12, 
 [node name="blockbench_export9" parent="FENCEStaticBody3D" unique_id=890817155 instance=ExtResource("4_k0juu")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12, 0, -8.5)
 
+[node name="HOUSEStaticBody3D2" type="StaticBody3D" parent="." unique_id=822226909]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HOUSEStaticBody3D2" unique_id=1528983528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026275635, 4.2466373, -19.008844)
+shape = SubResource("BoxShape3D_cbyeo")
+
+[node name="blockbench_export" parent="HOUSEStaticBody3D2" unique_id=1684592940 instance=ExtResource("7_4mrxx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1195128, -15.213434)
+
 [node name="GAMEMANAGER" type="Node" parent="." unique_id=418383822 node_paths=PackedStringArray("uiManager")]
 script = ExtResource("5_71j4m")
 uiManager = NodePath("../CharacterBody3D/Control")
+
+[editable path="HOUSEStaticBody3D2/blockbench_export"]
