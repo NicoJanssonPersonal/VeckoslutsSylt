@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bivmn6lckjiob"
-path="res://.godot/imported/scythe_0.png-a019dee398cbdbdf9c2c3b387cb2d020.ctex"
+uid="uid://dp760ym3v7ukr"
+path="res://.godot/imported/hand_0.png-12af995b2458f5f396a708e2d45065c8.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "7d61f0119969099a21b649ce88776e39"
+"md5": "32a5f6ad0dfd2f892fd8bf724756b8b1"
 }
 
 [deps]
 
-source_file="res://assets/scythe_0.png"
-dest_files=["res://.godot/imported/scythe_0.png-a019dee398cbdbdf9c2c3b387cb2d020.ctex"]
+source_file="res://assets/tools/hand_0.png"
+dest_files=["res://.godot/imported/hand_0.png-12af995b2458f5f396a708e2d45065c8.ctex"]
 
 [params]
 

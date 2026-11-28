@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c7v4xlpjsaxld"
-path="res://.godot/imported/grass (1).glb-5bef8c075c6dee9347e269f54e63a1fd.scn"
+uid="uid://cqujubaiplldf"
+path="res://.godot/imported/maskros.glb-b95d812e4c417ced51322d40436d24e1.scn"
 
 [deps]
 
-source_file="res://assets/grass (1).glb"
-dest_files=["res://.godot/imported/grass (1).glb-5bef8c075c6dee9347e269f54e63a1fd.scn"]
+source_file="res://assets/weeds/maskros.glb"
+dest_files=["res://.godot/imported/maskros.glb-b95d812e4c417ced51322d40436d24e1.scn"]
 
 [params]
 

@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://binmmxl0fxccw"
-path="res://.godot/imported/hedge_0.png-5a39f345c9a803a27f3437b025fb36f2.ctex"
+uid="uid://bivmn6lckjiob"
+path="res://.godot/imported/scythe_0.png-0fda462b107a3ffa8baff89a15c61643.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "e2c30c7849faf9948226e6da326afab4"
+"md5": "7d61f0119969099a21b649ce88776e39"
 }
 
 [deps]
 
-source_file="res://assets/hedge_0.png"
-dest_files=["res://.godot/imported/hedge_0.png-5a39f345c9a803a27f3437b025fb36f2.ctex"]
+source_file="res://assets/tools/scythe_0.png"
+dest_files=["res://.godot/imported/scythe_0.png-0fda462b107a3ffa8baff89a15c61643.ctex"]
 
 [params]
 

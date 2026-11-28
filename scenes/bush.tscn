@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://jfgjukp6b33c"]
 
 [ext_resource type="Script" uid="uid://kdwah8f3m0m0" path="res://scripts/weeds/Weed.cs" id="1_6ftm5"]
-[ext_resource type="ArrayMesh" uid="uid://coewsebsix8m" path="res://assets/grass_blade.tres" id="1_ehqem"]
+[ext_resource type="ArrayMesh" uid="uid://coewsebsix8m" path="res://assets/weeds/grass_blade.tres" id="1_ehqem"]
 [ext_resource type="Script" uid="uid://1aofvtopmsbl" path="res://scripts/weeds/GenerateBush.cs" id="1_tu87o"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xxbxq"]

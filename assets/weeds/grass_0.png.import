@@ -2,23 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp760ym3v7ukr"
-path="res://.godot/imported/hand_0.png-3aa1617aecda8d9e82d922e27ec2c32d.ctex"
+uid="uid://xv5ebvo34pld"
+path.s3tc="res://.godot/imported/grass_0.png-26b825855397d049d3783d3029ec2e87.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
-"md5": "32a5f6ad0dfd2f892fd8bf724756b8b1"
+"md5": "b3176d21cb0a05e9a7097d9abce5d575"
 }
 
 [deps]
 
-source_file="res://assets/hand_0.png"
-dest_files=["res://.godot/imported/hand_0.png-3aa1617aecda8d9e82d922e27ec2c32d.ctex"]
+source_file="res://assets/weeds/grass_0.png"
+dest_files=["res://.godot/imported/grass_0.png-26b825855397d049d3783d3029ec2e87.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -26,7 +27,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b5w77og60nd6o"
-path="res://.godot/imported/snigel.glb-c3f5335cb7f5bc4003d49d646ff2fa36.scn"
+uid="uid://dape4lqwxqv7g"
+path="res://.godot/imported/hedge.glb-bdd5441b0c8c62c8180de5b8b0449baf.scn"
 
 [deps]
 
-source_file="res://assets/snigel.glb"
-dest_files=["res://.godot/imported/snigel.glb-c3f5335cb7f5bc4003d49d646ff2fa36.scn"]
+source_file="res://assets/environment/hedge.glb"
+dest_files=["res://.godot/imported/hedge.glb-bdd5441b0c8c62c8180de5b8b0449baf.scn"]
 
 [params]
 

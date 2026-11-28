@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccn2v0dvmagrn"
-path="res://.godot/imported/maskros_0.png-9eef0d230f05e54649e7ab59ce640eb6.ctex"
+uid="uid://binmmxl0fxccw"
+path="res://.godot/imported/hedge_0.png-5b46774f4b03a72b5e36853460651842.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "c0a8d83fc72d467331cccce8c1a71c35"
+"md5": "e2c30c7849faf9948226e6da326afab4"
 }
 
 [deps]
 
-source_file="res://assets/maskros_0.png"
-dest_files=["res://.godot/imported/maskros_0.png-9eef0d230f05e54649e7ab59ce640eb6.ctex"]
+source_file="res://assets/environment/hedge_0.png"
+dest_files=["res://.godot/imported/hedge_0.png-5b46774f4b03a72b5e36853460651842.ctex"]
 
 [params]
 

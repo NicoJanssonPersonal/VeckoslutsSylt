@@ -2,16 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm1vdqvm04iv8"
-path="res://.godot/imported/WEEDSgrass.png-80af9b961cf599dad43573d19450c592.ctex"
+uid="uid://0ccfk5dhmn03"
+path="res://.godot/imported/house_0.png-28bf57d986767e0a91cd8f45f9b98ad5.ctex"
 metadata={
 "vram_texture": false
+}
+generator_parameters={
+"md5": "dd4749bc8baebc9d56e8b752ce9e4a6f"
 }
 
 [deps]
 
-source_file="res://assets/WEEDSgrass.png"
-dest_files=["res://.godot/imported/WEEDSgrass.png-80af9b961cf599dad43573d19450c592.ctex"]
+source_file="res://assets/environment/house_0.png"
+dest_files=["res://.godot/imported/house_0.png-28bf57d986767e0a91cd8f45f9b98ad5.ctex"]
 
 [params]
 
@@ -37,4 +40,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

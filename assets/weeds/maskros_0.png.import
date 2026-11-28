@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmx2s8nodbh56"
-path="res://.godot/imported/snigel_0.png-9796b165b2d96db08b8f53227edff675.ctex"
+uid="uid://ccn2v0dvmagrn"
+path="res://.godot/imported/maskros_0.png-970fa9bbe0070daed2ba7ca073ce326a.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "98c54e996a6623980d0b9feee1f33749"
+"md5": "c0a8d83fc72d467331cccce8c1a71c35"
 }
 
 [deps]
 
-source_file="res://assets/snigel_0.png"
-dest_files=["res://.godot/imported/snigel_0.png-9796b165b2d96db08b8f53227edff675.ctex"]
+source_file="res://assets/weeds/maskros_0.png"
+dest_files=["res://.godot/imported/maskros_0.png-970fa9bbe0070daed2ba7ca073ce326a.ctex"]
 
 [params]
 

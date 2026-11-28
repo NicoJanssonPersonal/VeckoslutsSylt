@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0ccfk5dhmn03"
-path="res://.godot/imported/house_0.png-478a3f51058ad734f2ea93be0ecf6cc0.ctex"
+uid="uid://dj40rheho0k48"
+path="res://.godot/imported/grass.png-052ab405dc3b8142181d4690fe0aa608.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "dd4749bc8baebc9d56e8b752ce9e4a6f"
+"md5": "b3176d21cb0a05e9a7097d9abce5d575"
 }
 
 [deps]
 
-source_file="res://assets/house_0.png"
-dest_files=["res://.godot/imported/house_0.png-478a3f51058ad734f2ea93be0ecf6cc0.ctex"]
+source_file="res://assets/weeds/grass.png"
+dest_files=["res://.godot/imported/grass.png-052ab405dc3b8142181d4690fe0aa608.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=0
+compress/channel_pack=1
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0

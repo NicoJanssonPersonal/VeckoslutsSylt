@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://hoabxmsic4a6"]
 
-[ext_resource type="PackedScene" uid="uid://b5w77og60nd6o" path="res://assets/snigel.glb" id="1_hm8oe"]
-[ext_resource type="Script" uid="uid://dvmubicjuagh7" path="res://scripts/CameraOrbit.cs" id="2_idsek"]
-[ext_resource type="PackedScene" uid="uid://nboxj3pndqqt" path="res://assets/house.glb" id="3_idsek"]
-[ext_resource type="PackedScene" uid="uid://brdttsx7kypp3" path="res://assets/fence.glb" id="3_yqwdb"]
+[ext_resource type="PackedScene" uid="uid://b5w77og60nd6o" path="res://assets/environment/snigel.glb" id="1_hm8oe"]
+[ext_resource type="Script" uid="uid://dvmubicjuagh7" path="res://scripts/system/CameraOrbit.cs" id="2_idsek"]
+[ext_resource type="PackedScene" uid="uid://nboxj3pndqqt" path="res://assets/environment/house.glb" id="3_idsek"]
+[ext_resource type="PackedScene" uid="uid://brdttsx7kypp3" path="res://assets/environment/fence.glb" id="3_yqwdb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hm8oe"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
