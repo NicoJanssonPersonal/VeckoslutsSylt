@@ -11,11 +11,12 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cbyeo"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1521399822 node_paths=PackedStringArray("handTool", "saxTool", "scytheTool")]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1521399822 node_paths=PackedStringArray("handTool", "saxTool", "scytheTool", "_rayCast")]
 script = ExtResource("1_4flbx")
 handTool = NodePath("HEAD/Camera3D/RayCast3D/HandTool")
 saxTool = NodePath("HEAD/Camera3D/RayCast3D/Sax")
 scytheTool = NodePath("HEAD/Camera3D/RayCast3D/scythe")
+_rayCast = NodePath("HEAD/Camera3D/RayCast3D")
 
 [node name="HEAD" type="Node3D" parent="." unique_id=557298017]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -37,7 +38,6 @@ visible = false
 
 [node name="scythe" parent="HEAD/Camera3D/RayCast3D" unique_id=1229385757 instance=ExtResource("4_tuyoq")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.39154994, -1.4782699, -1.223116)
-_damage = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=244889598]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

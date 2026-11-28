@@ -1,13 +1,8 @@
 using Godot;
+using System.Linq;
 
 public partial class Player : CharacterBody3D
 {
-
-	[Export] private HandTool handTool;
-	[Export] private Sax saxTool;
-	[Export] private Scythe scytheTool;
-
-
 	private Camera3D _cam;
 	private Node3D _head;
 	private CollisionShape3D _colShape;
@@ -24,11 +19,12 @@ public partial class Player : CharacterBody3D
 	private float _standHeadY;
 	private float _crouchHeadY;
 	private bool _isCrouching = false;
-    private Tools tool;
-	private bool _toolHand = false;
-	private bool _toolSax = !true;
-	private bool _toolScythe = true;
-	public override void _Ready()
+    [Export] private RayCast3D _rayCast {get; set;}
+    private Tools[] _tools;
+    private Tools _currentTool;
+    private int _currentToolIndex;
+	
+    public override void _Ready()
 	{
 		Settings.LoadData();
 		_head = GetNode<Node3D>("HEAD");
@@ -40,7 +36,11 @@ public partial class Player : CharacterBody3D
 		_crouchHeadY = _standHeadY - (StandHeight - CrouchHeight);
 
 		_cam.Current = true;
-		Input.MouseMode = Input.MouseModeEnum.Captured;
+		Input.MouseMode = Input.MouseModeEnum.Captured; 
+
+        _tools = _rayCast.GetChildren().OfType<Tools>().ToArray();
+        _currentToolIndex = 0;
+        SetTool(_currentToolIndex);
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -60,19 +60,10 @@ public partial class Player : CharacterBody3D
 		{
 			velocity.Y = JumpVelocity;
 		}
-		if (Input.IsActionJustPressed("action") && _toolHand)
+		if (Input.IsActionJustPressed("action"))
 		{
-			handTool.useTool();
-		}
-		if (Input.IsActionJustPressed("action") && _toolSax)
-		{
-			saxTool.useTool();
-		}
-		if (Input.IsActionJustPressed("action") && _toolScythe)
-		{
-			scytheTool.useTool();
-		}
-
+			_currentTool.useTool();
+		}	
 		if (Input.IsActionJustPressed("crouch"))
 		{
 			if (_isCrouching)
@@ -136,5 +127,36 @@ public partial class Player : CharacterBody3D
 			camRot.X = Mathf.Clamp(camRot.X, Mathf.DegToRad(-80.0f), Mathf.DegToRad(75.0f));
 			_cam.Rotation = camRot;
 		}
+
+        if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
+        {
+            if (mouseEvent.ButtonIndex == MouseButton.WheelUp)
+            {
+                _currentToolIndex++;
+                if (_currentToolIndex > _tools.Count())
+                    _currentToolIndex = 0;
+                
+                SetTool(_currentToolIndex);
+            }
+            else if (mouseEvent.ButtonIndex == MouseButton.WheelDown)
+            {
+                _currentToolIndex--;
+                if (_currentToolIndex < 0)
+                    _currentToolIndex = _tools.Count() - 1;
+
+                SetTool(_currentToolIndex);
+            }
+        }
 	}
+
+    public void SetTool(int index)
+    {
+        if (index < 0 || index >= _tools.Length)
+            return;
+
+        for (int i = 0; i < _tools.Length; i++)
+            _tools[i].Visible = (i == index);
+
+        _currentTool = _tools[index];
+    }
 }
